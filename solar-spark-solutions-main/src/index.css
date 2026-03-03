@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 20% 97%;
+    --foreground: 210 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 15%;
+
+    --primary: 152 62% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 55% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 140 15% 93%;
+    --muted-foreground: 210 15% 45%;
+
+    --accent: 42 95% 55%;
+    --accent-foreground: 210 30% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 140 12% 88%;
+    --input: 140 12% 88%;
+    --ring: 152 62% 28%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(152 62% 28%) 0%, hsl(210 55% 25%) 100%);
+    --section-alt: 140 15% 95%;
+    --glow-green: 152 72% 45%;
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 140 15% 93%;
+    --card: 210 25% 12%;
+    --card-foreground: 140 15% 93%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 140 15% 93%;
+    --primary: 152 62% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 55% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 140 10% 60%;
+    --accent: 42 95% 55%;
+    --accent-foreground: 210 30% 12%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 152 62% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+  }
+
+  .gradient-primary {
+    background: var(--hero-gradient);
+  }
+
+  .bg-section-alt {
+    background: hsl(var(--section-alt));
+  }
+
+  .text-glow {
+    text-shadow: 0 0 40px hsl(var(--glow-green) / 0.3);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
