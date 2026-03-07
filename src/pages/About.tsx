@@ -9,7 +9,7 @@ const About = () => {
       <Navbar />
       <main>
         <PageHeader 
-          title="About SolarVolt" 
+          title="About Reyansh Solar Services" 
           subtitle="Pioneering the clean energy revolution in India since 2010. We are dedicated to making solar power the primary energy source for every household and business."
         />
         <AboutSection />

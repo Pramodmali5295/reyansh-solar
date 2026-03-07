@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
+  { label: "Calculator", href: "/calculator" },
   { label: "Testimonials", href: "/testimonials" },
 ];
 
@@ -35,28 +37,28 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-3"
-          : "bg-transparent py-5"
+          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-8"
+          : "bg-transparent py-14"
       }`}
     >
       <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16">
-        <Link to="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl gradient-primary shadow-lg transition-transform group-hover:scale-110">
-            <Sun className="h-6 w-6 text-primary-foreground" />
+        <Link to="/" className="group flex items-center gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
+            <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1" />
           </div>
-          <span className={`font-display text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            SolarVolt
+          <span className={`font-display flex-shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+            Reyansh Solar Services
           </span>
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden items-center gap-10 md:flex">
+        <ul className="hidden items-center gap-6 xl:gap-12 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={`text-base font-semibold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
-                  isActive(link.href) ? "text-accent after:w-full" : (scrolled ? "text-foreground" : "text-primary-foreground/90")
+                className={`text-lg font-bold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
+                  isActive(link.href) ? "text-accent after:w-full" : (scrolled ? "text-foreground" : "text-white drop-shadow-md brightness-110")
                 }`}
               >
                 {link.label}
@@ -66,7 +68,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="rounded-full bg-accent px-6 py-2.5 text-base font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
+              className="rounded-full bg-accent px-8 py-3.5 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
             >
               Contact Us
             </Link>
@@ -75,7 +77,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="rounded-lg p-2 md:hidden transition-colors hover:bg-white/10"
+          className="rounded-lg p-2 lg:hidden transition-colors hover:bg-white/10"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -94,7 +96,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0, y: -20 }}
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
-            className="overflow-hidden bg-card/98 backdrop-blur-xl shadow-2xl md:hidden border-b border-border"
+            className="overflow-hidden bg-card/98 backdrop-blur-xl shadow-2xl lg:hidden border-b border-border"
           >
             <ul className="flex flex-col gap-2 p-6">
               {navLinks.map((link) => (

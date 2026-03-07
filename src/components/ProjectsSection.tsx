@@ -1,40 +1,63 @@
-import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { MapPin, Zap, ExternalLink } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 import projectFarm from "@/assets/project-farm.png";
 import projectOffice from "@/assets/project-office.png";
 import projectVilla from "@/assets/project-villa.png";
+import heroSolar1 from "@/assets/hero-solar-1.jpg";
 import heroSolar2 from "@/assets/hero-solar-2.jpg";
+import heroSolar3 from "@/assets/hero-solar-3.jpg";
+import commercialSolar from "@/assets/commercial-solar.png";
+import residentialSolar from "@/assets/residential-solar.png";
 
 const projects = [
   { image: projectFarm, title: "Gujarat Shakti Solar Park", location: "Patan, Gujarat", capacity: "15 MW", type: "Industrial" },
   { image: projectOffice, title: "TechTrend Corporate HQ", location: "Hitech City, Hyderabad", capacity: "800 kW", type: "Commercial" },
   { image: projectVilla, title: "Palm Grove Estates", location: "Goa, India", capacity: "25 kW", type: "Residential" },
-  { image: heroSolar2, title: "Green Valley Residences", location: "Bengaluru, Karnataka", capacity: "150 kW", type: "Residential" },
-  { image: projectOffice, title: "Horizon Business Park", location: "Gurgaon, Haryana", capacity: "1.2 MW", type: "Commercial" },
-  { image: projectFarm, title: "Steel Works Industrial Plant", location: "Jamshedpur, Jharkhand", capacity: "5 MW", type: "Industrial" },
-  { image: projectVilla, title: "Elite Skyline Villas", location: "Pune, Maharashtra", capacity: "40 kW", type: "Residential" },
-  { image: projectOffice, title: "Unity Retail Mall", location: "Kochi, Kerala", capacity: "600 kW", type: "Commercial" },
+  { image: heroSolar3, title: "Green Valley Residences", location: "Bengaluru, Karnataka", capacity: "150 kW", type: "Residential" },
 ];
 
 const filters = ["All", "Residential", "Commercial", "Industrial"];
 
 const ProjectsSection = ({ showHeader = true }: { showHeader?: boolean }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const containerRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState("All");
 
   const filtered = filter === "All" ? projects : projects.filter((p) => p.type === filter);
 
+  useGSAP(() => {
+    // 1. Header Animation (if visible)
+    if (showHeader) {
+      gsap.fromTo(".projects-header > *",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out", scrollTrigger: { trigger: ".projects-section", start: "top 85%" } }
+      );
+    }
+    
+    // 2. Filters Animation
+    gsap.fromTo(".filter-btn",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out", scrollTrigger: { trigger: ".projects-section", start: "top 80%" } }
+    );
+
+    // 3. Project Cards Animation (runs on mount AND when filter changes)
+    gsap.fromTo(".project-card",
+      { opacity: 0, scale: 0.95, y: 20 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.5, stagger: 0.08, ease: "power2.out", clearProps: "all" }
+    );
+
+  }, { scope: containerRef, dependencies: [filter, showHeader] });
+
   return (
-    <section id="projects" className="section-padding bg-section-alt" ref={ref}>
+    <section id="projects" className="projects-section section-padding bg-section-alt" ref={containerRef}>
       <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
         {showHeader && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mx-auto mb-16 max-w-4xl text-center"
+          <div
+            className="projects-header mx-auto mb-16 max-w-4xl text-center"
           >
             <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
               Our Portfolio
@@ -46,7 +69,7 @@ const ProjectsSection = ({ showHeader = true }: { showHeader?: boolean }) => {
               From urban rooftops to rural solar farms, explore our diverse portfolio of engineering excellence 
               delivering sustainable energy to thousands of households and businesses.
             </p>
-          </motion.div>
+          </div>
         )}
 
         <div className="mb-12 flex flex-wrap justify-center gap-3">
@@ -54,7 +77,7 @@ const ProjectsSection = ({ showHeader = true }: { showHeader?: boolean }) => {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`rounded-full px-8 py-3 text-sm font-bold transition-all ${
+              className={`filter-btn rounded-full px-8 py-3 text-sm font-bold transition-all ${
                 filter === f
                   ? "bg-primary text-primary-foreground shadow-xl scale-105"
                   : "bg-card text-muted-foreground hover:bg-primary/5 hover:text-primary"
@@ -67,13 +90,9 @@ const ProjectsSection = ({ showHeader = true }: { showHeader?: boolean }) => {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((p, i) => (
-            <motion.div
+            <div
               key={p.title}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.08 * i }}
-              className="group overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50"
+              className="project-card group overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -102,7 +121,7 @@ const ProjectsSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

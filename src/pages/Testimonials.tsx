@@ -10,7 +10,7 @@ const Testimonials = () => {
       <main>
         <PageHeader 
           title="Client Testimonials" 
-          subtitle="Hear from our satisfied customers about how SolarVolt helped them achieve energy independence and significant cost savings."
+          subtitle="Hear from our satisfied customers about how Reyansh Solar Services helped them achieve energy independence and significant cost savings."
         />
         <TestimonialsSection showHeader={false} />
       </main>
