@@ -41,7 +41,7 @@ const Footer = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 90%",
+          start: "top 95%",
         }
       }
     );
@@ -60,12 +60,12 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#020617] pt-12 pb-6 overflow-hidden text-white" ref={containerRef}>
       {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none -z-10">
-        <div className="footer-bg-blob absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full" />
-        <div className="footer-bg-blob absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full" />
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="footer-bg-blob absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="footer-bg-blob absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full translate-x-1/2 translate-y-1/2" />
       </div>
 
-      <div className="w-full max-w-full px-6 md:px-8 lg:px-20">
+      <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-8 border-b border-white/10 pb-12">
           
@@ -75,11 +75,11 @@ const Footer = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl overflow-hidden bg-white shadow-2xl transition-all group-hover:scale-110 group-hover:rotate-3">
                 <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1.5" />
               </div>
-              <span className="font-display text-3xl font-bold tracking-tighter text-white">
+              <span className="font-display text-2xl sm:text-3xl font-bold tracking-tighter text-white">
                 Reyansh Solar Services<span className="text-green-400">.</span>
               </span>
             </Link>
-            <p className="text-white/90 leading-relaxed text-lg lg:text-xl font-medium max-w-md">
+            <p className="text-white/90 leading-relaxed text-base sm:text-lg lg:text-xl font-medium max-w-md">
               Empowering India with clean, sustainable, and affordable energy solutions. Join the green revolution today.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
@@ -93,7 +93,7 @@ const Footer = () => {
                   href={social.href}
                   className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 border ${social.borderColor} ${social.color} transition-all ${social.hoverBg} hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/20`}
                 >
-                  <social.icon className="h-7 w-7" />
+                  <social.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                 </a>
               ))}
             </div>
@@ -139,7 +139,7 @@ const Footer = () => {
                 "Solar Maintenance",
                 "System Monitoring",
               ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-base md:text-lg font-semibold text-white/90 hover:text-white transition-colors cursor-pointer group w-fit">
+                <li key={item} className="flex items-center gap-3 text-sm sm:text-base md:text-lg font-semibold text-white/90 hover:text-white transition-colors cursor-pointer group w-fit">
                    <div className="h-1.5 w-1.5 rounded-full bg-white/20 group-hover:bg-green-400 transition-colors" />
                    {item}
                 </li>
@@ -203,7 +203,7 @@ const Footer = () => {
               className="group flex items-center gap-4 text-base font-black uppercase tracking-[0.2em] text-white transition-all"
             >
               Back to Top
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(var(--primary),0.4)] transition-all">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_hsla(var(--primary),0.4)] transition-all">
                 <ArrowUp className="h-5 w-5 text-white" />
               </div>
             </button>
