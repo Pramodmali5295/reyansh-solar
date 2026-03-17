@@ -13,16 +13,16 @@ import heroSolar2 from "@/assets/hero-solar-2.jpg";
 import heroSolar3 from "@/assets/hero-solar-3.jpg";
 import industrialSolar from "@/assets/industrial-solar-service.png";
 import commercialSolar from "@/assets/commercial-solar.png";
+import project1 from "@/assets/project1.jpeg";
+import projectVideo from "@/assets/video 1.mp4";
+import inverterImg from "@/assets/inverter-installation.jpg";
 
 const projects = [
-  { image: projectFarm, title: "Gujarat Shakti Solar Park", location: "Patan, Gujarat", capacity: "15 MW", type: "Industrial" },
-  { image: projectOffice, title: "TechTrend Corporate HQ", location: "Hitech City, Hyderabad", capacity: "800 kW", type: "Commercial" },
-  { image: projectVilla, title: "Palm Grove Estates", location: "Goa, India", capacity: "25 kW", type: "Residential" },
-  { image: heroSolar3, title: "Green Valley Residences", location: "Bengaluru, Karnataka", capacity: "150 kW", type: "Residential" },
-  { image: industrialSolar, title: "Maharashtra Energy Hub", location: "Chakan, Pune", capacity: "10 MW", type: "Industrial" },
-  { image: commercialSolar, title: "Skyline Business Center", location: "BKC, Mumbai", capacity: "500 kW", type: "Commercial" },
-  { image: heroSolar1, title: "Radiant Towers", location: "Viman Nagar, Pune", capacity: "200 kW", type: "Residential" },
-  { image: heroSolar2, title: "Nagpur Mega Steel Plant", location: "Nagpur, Maharashtra", capacity: "25 MW", type: "Industrial" },
+  { image: project1, title: "Residential Solar Power", location: "Dehu, Pune", capacity: "3 kW", type: "Residential" },
+  { image: inverterImg, title: "Rooftop Solar Installation", location: "Dehu, Pune", capacity: "3 kW", type: "Residential" },
+  { image: project1, title: "Premium Home Solar", location: "Dhanori, Pune", capacity: "6 kW", type: "Residential" },
+  { image: projectVilla, video: projectVideo, title: "Eco-Friendly Residence", location: "Dhanori, Pune", capacity: "3 kW", type: "Residential" },
+  { image: projectOffice, title: "Advanced Solar Solution", location: "Vadgaon Sheri, Pune", capacity: "9 kW", type: "Residential" },
 ];
 
 
@@ -111,27 +111,38 @@ const ProjectsSection = ({
               {displayProjects.map((p, i) => (
                 <div
                   key={`${p.title}-${i}`}
-                  className="project-card group inline-block w-[300px] shrink-0 overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50 will-change-transform"
+                  className="project-card group inline-block w-[320px] sm:w-[380px] shrink-0 overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50 will-change-transform"
                 >
                   <div className="relative h-60 overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
+                    {p.video ? (
+                      <video
+                        src={p.video}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                    )}
                     <div className="absolute top-4 right-4 rounded-full bg-accent/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-foreground">
                       {p.type}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="mb-3 text-xl font-bold text-foreground group-hover:text-primary transition-colors whitespace-normal">{p.title}</h3>
+                    <h3 className="mb-3 text-[20px] sm:text-[22px] font-bold text-foreground group-hover:text-primary transition-colors whitespace-normal leading-tight">{p.title}</h3>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 text-primary" /> {p.location}
+                      <div className="flex items-center gap-2 text-[14px] sm:text-[16px] text-muted-foreground font-medium">
+                        <MapPin className="h-4 w-4 text-primary shrink-0" /> {p.location}
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Zap className="h-4 w-4 text-accent" /> <span className="font-bold text-foreground">{p.capacity}</span> installed
+                      <div className="flex items-center gap-2 text-[14px] sm:text-[16px] text-muted-foreground font-medium">
+                        <Zap className="h-4 w-4 text-accent shrink-0" /> <span className="font-bold text-foreground">{p.capacity}</span> installed
                       </div>
                     </div>
                   </div>
@@ -143,31 +154,42 @@ const ProjectsSection = ({
           </div>
         ) : (
           <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
               {displayProjects.map((p, i) => (
                 <div
                   key={`${p.title}-${i}`}
-                  className="project-card group overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50 will-change-transform"
+                  className="project-card group w-full max-w-[480px] overflow-hidden rounded-3xl bg-card shadow-lg transition-all hover:shadow-2xl border border-border/50 will-change-transform"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
+                    {p.video ? (
+                      <video
+                        src={p.video}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                    )}
                     <div className="absolute top-4 right-4 rounded-full bg-accent/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-foreground">
                       {p.type}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="mb-3 text-xl font-bold text-foreground group-hover:text-primary transition-colors">{p.title}</h3>
+                    <h3 className="mb-3 text-[20px] sm:text-[22px] font-bold text-foreground group-hover:text-primary transition-colors leading-tight">{p.title}</h3>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 text-primary" /> {p.location}
+                      <div className="flex items-center gap-2 text-[14px] sm:text-[16px] text-muted-foreground font-medium">
+                        <MapPin className="h-4 w-4 text-primary shrink-0" /> {p.location}
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Zap className="h-4 w-4 text-accent" /> <span className="font-bold text-foreground">{p.capacity}</span> installed
+                      <div className="flex items-center gap-2 text-[14px] sm:text-[16px] text-muted-foreground font-medium">
+                        <Zap className="h-4 w-4 text-accent shrink-0" /> <span className="font-bold text-foreground">{p.capacity}</span> installed
                       </div>
                     </div>
                   </div>

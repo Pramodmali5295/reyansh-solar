@@ -40,8 +40,7 @@ const SocialBar = () => {
 
   const socials = [
     { icon: WhatsappIcon, href: "https://wa.me/919657068609", bgColor: "bg-[#25D366]", label: "WhatsApp" },
-    { icon: Facebook, href: "#", bgColor: "bg-[#1877F2]", label: "Facebook" },
-    { icon: Instagram, href: "#", bgColor: "bg-[#E4405F]", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/reyanshsolarservices?igsh=MTc5dmV2Y3d4ajkxNQ==", bgColor: "bg-[#E4405F]", label: "Instagram" },
   ];
 
   return (

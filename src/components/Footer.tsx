@@ -72,8 +72,8 @@ const Footer = () => {
           {/* Column 1: Brand & Mission */}
           <div className="footer-column sm:col-span-2 lg:col-span-4 space-y-4">
             <Link to="/" className="group flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl overflow-hidden bg-white shadow-2xl transition-all group-hover:scale-110 group-hover:rotate-3">
-                <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1.5" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl overflow-hidden transition-all group-hover:scale-110 group-hover:rotate-3">
+                <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain" />
               </div>
               <span className="font-display text-2xl sm:text-3xl font-bold tracking-tighter text-white">
                 Reyansh Solar Services<span className="text-green-400">.</span>
@@ -85,8 +85,7 @@ const Footer = () => {
             <div className="flex flex-wrap gap-4 pt-2">
               {[
                 { icon: WhatsappIcon, href: "https://wa.me/919657068609", color: "text-[#25D366]", hoverBg: "hover:bg-[#25D366]", borderColor: "border-[#25D366]/20" },
-                { icon: Facebook, href: "#", color: "text-[#1877F2]", hoverBg: "hover:bg-[#1877F2]", borderColor: "border-[#1877F2]/20" },
-                { icon: Instagram, href: "#", color: "text-[#E4405F]", hoverBg: "hover:bg-[#E4405F]", borderColor: "border-[#E4405F]/20" }
+                { icon: Instagram, href: "https://www.instagram.com/reyanshsolarservices?igsh=MTc5dmV2Y3d4ajkxNQ==", color: "text-[#E4405F]", hoverBg: "hover:bg-[#E4405F]", borderColor: "border-[#E4405F]/20" }
               ].map((social, i) => (
                 <a
                   key={i}
@@ -192,22 +191,22 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-white/5">
-          <div className="text-xs md:text-sm font-bold text-white/70 text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6 border-t border-white/5">
+          <div className="text-[12px] sm:text-[14px] font-bold text-white/70 text-center md:text-left tracking-wide">
             © {currentYear} REYANSH SOLAR SERVICES. All Rights Reserved.
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
             <button 
               onClick={scrollToTop}
-              className="group flex items-center gap-3 text-sm font-black uppercase tracking-[0.2em] text-white transition-all order-2 md:order-1"
+              className="group flex items-center gap-3 text-[12px] sm:text-[14px] font-extrabold uppercase tracking-[0.2em] text-white transition-all order-2 md:order-1"
             >
               Back to Top
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_hsla(var(--primary),0.4)] transition-all">
                 <ArrowUp className="h-4 w-4 text-white" />
               </div>
             </button>
-            <div className="text-xs md:text-sm font-bold text-white/70 order-1 md:order-2">
+            <div className="text-[12px] sm:text-[14px] font-bold text-white/70 order-1 md:order-2 text-center md:text-left">
               Developed by <a href="https://infoyashonand.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white transition-colors underline underline-offset-4 decoration-white/30">Infoyashonand Technology Pvt Ltd</a>
             </div>
           </div>

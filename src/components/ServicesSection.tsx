@@ -31,7 +31,7 @@ const services = [
     image: industrialImg,
     title: "Industrial Solar",
     desc: "Megawatt-scale EPC solutions for heavy industries. Engineered for durability and maximum ROI.",
-    features: ["500kW – 50MW Projects", "Custom PV Engineering", "PPA & OPEX Models"],
+    features: ["500kW – 10MW Projects", "Custom PV Engineering", "PPA & OPEX Models"],
   },
   {
     icon: Wrench,

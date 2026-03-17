@@ -49,8 +49,8 @@ const TrustBar = () => {
 
   return (
     <div className="bg-white py-16 border-y border-slate-100 overflow-hidden" ref={containerRef}>
-      <div className="w-full max-w-full px-6 md:px-12 lg:px-20 text-center mb-10">
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">
+      <div className="w-full max-w-full px-4 sm:px-6 md:px-12 lg:px-20 text-center mb-8 sm:mb-12">
+        <p className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-slate-400">
           AUTHORIZED INSTALLER FOR PREMIUM BRANDS
         </p>
       </div>
@@ -58,11 +58,11 @@ const TrustBar = () => {
       <div className="relative">
         <div 
           ref={scrollRef}
-          className="flex items-center gap-8 md:gap-12 whitespace-nowrap will-change-transform"
+          className="flex items-center gap-6 sm:gap-10 md:gap-12 whitespace-nowrap will-change-transform"
         >
           {displayPartners.map((p, i) => (
             <div key={`${p.name}-${i}`} className="partner-logo flex items-center justify-center min-w-[120px] sm:min-w-[180px] md:min-w-[280px] px-2 sm:px-4">
-              <div className="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 shadow-sm border border-slate-50 flex items-center justify-center w-full h-20 sm:h-28 md:h-40">
+              <div className="flex items-center justify-center w-full h-16 sm:h-28 md:h-40">
                 <img 
                   src={p.logo} 
                   alt={p.name} 
@@ -74,8 +74,8 @@ const TrustBar = () => {
         </div>
         
         {/* Gradients for fading edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
       </div>
     </div>
   );

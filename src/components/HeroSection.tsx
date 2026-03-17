@@ -84,15 +84,15 @@ const HeroSection = () => {
                 Industrial Scale
               </span>
             </div>
-            <h1 className="mb-8 font-bold text-primary-foreground text-glow text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.2] sm:leading-[1.1]">
+            <h1 className="mb-8 font-bold text-primary-foreground text-glow heading-hero">
               Lower Your Bills to Zero. Power Your Future with Reyansh Solar Services.
             </h1>
-            <div className="mb-8 max-w-3xl space-y-4 text-center">
+            <div className="mb-10 max-w-3xl space-y-5 text-center">
               <p className="text-lg md:text-xl text-primary-foreground font-medium leading-relaxed">
                 Premium solar solutions for homes and businesses. Expert design, professional installation, and lifelong support.
               </p>
               <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed bg-white/10 backdrop-blur-md py-3 px-6 rounded-2xl border border-white/20">
-                <span className="text-accent font-bold">Government-approved</span> solar solutions with up to <span className="text-accent font-bold">₹78,000 subsidy</span>. We handle everything from site survey to DISCOM approval.
+                <span className="text-accent font-bold">Government-approved</span> solar solutions with up to <span className="text-accent font-bold">₹78,000 subsidy</span> for residential households and <span className="text-accent font-bold">₹18,000 per/kW</span> subsidy for Group Housing societies. We handle everything from site survey to DISCOM approval.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">

@@ -102,7 +102,7 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                 { icon: Phone, label: "Phone Support", value: "+91 96570 68609" },
                 { icon: Mail, label: "Email Us", value: "reyanshsolarsevices@gmail.com" },
                 { icon: Shield, label: "GST Number", value: "27ABMFR1823R1ZH" },
-                { icon: Clock, label: "Business Hours", value: "Mon - Sat: 9:00 AM - 6:30 PM" },
+                { icon: Clock, label: "Business Hours", value: "Mon - Sun: 9:00 AM - 6:00 PM" },
               ].map((item) => (
                 <div key={item.label} className="group flex flex-col sm:flex-row lg:flex-row gap-5 rounded-2xl bg-card p-6 shadow-sm transition-all hover:shadow-md border border-border/50">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -137,19 +137,19 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                    <p className="text-muted-foreground text-lg">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-base font-bold text-foreground ml-1">Full Name</label>
+                <div className="grid gap-5 md:grid-cols-2 mb-5">
+                  <div className="space-y-1.5 transition-all">
+                    <label className="text-[14px] sm:text-[16px] font-bold text-foreground/80 ml-1">Full Name</label>
                     <input
                       type="text"
                       name="name"
                       required
                       placeholder="e.g. Rahul Sharma"
-                      className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
+                      className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-[16px] outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-base font-bold text-foreground ml-1">Phone Number</label>
+                  <div className="space-y-1.5 transition-all">
+                    <label className="text-[14px] sm:text-[16px] font-bold text-foreground/80 ml-1">Phone Number</label>
                     <input
                       type="tel"
                       name="phone"
@@ -162,15 +162,15 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                         e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
                       }}
                       placeholder="e.g. 9876543210"
-                      className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
+                      className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-[16px] outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
                     />
                   </div>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 mb-6">
-                   <div className="space-y-2">
-                    <label className="text-base font-bold text-foreground ml-1">Monthly Light Units</label>
-                    <select name="units" className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5">
+                <div className="grid gap-5 md:grid-cols-2 mb-5">
+                   <div className="space-y-1.5 transition-all">
+                    <label className="text-[14px] sm:text-[16px] font-bold text-foreground/80 ml-1">Monthly Light Units</label>
+                    <select name="units" className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-[16px] outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5">
                       <option>0 - 150 Units</option>
                       <option>151 - 300 Units</option>
                       <option>301 - 500 Units</option>
@@ -178,9 +178,9 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                       <option>1000+ Units</option>
                     </select>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-base font-bold text-foreground ml-1">Property Type</label>
-                    <select name="type" className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5">
+                  <div className="space-y-1.5 transition-all">
+                    <label className="text-[14px] sm:text-[16px] font-bold text-foreground/80 ml-1">Property Type</label>
+                    <select name="type" className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-[16px] outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5">
                       <option>Residential Building</option>
                       <option>Commercial Complex</option>
                       <option>Industrial Factory</option>
@@ -189,20 +189,20 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                   </div>
                 </div>
 
-                <div className="space-y-2 mb-8">
-                  <label className="text-base font-bold text-foreground ml-1">Project Details</label>
+                <div className="space-y-1.5 mb-8 transition-all">
+                  <label className="text-[14px] sm:text-[16px] font-bold text-foreground/80 ml-1">Project Details</label>
                   <textarea
                     rows={4}
                     name="details"
                     placeholder="Tell us about your rooftop area or energy requirements..."
-                    className="w-full resize-none rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
+                    className="w-full resize-none rounded-xl border border-input bg-background/50 px-5 py-4 text-[16px] outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={submitted}
-                  className={`flex w-full items-center justify-center gap-3 rounded-2xl py-5 text-xl font-bold shadow-2xl transition-all active:scale-95 ${
+                  className={`flex w-full items-center justify-center gap-3 rounded-2xl py-5 text-[18px] sm:text-xl font-bold shadow-2xl transition-all active:scale-95 ${
                     submitted ? "bg-green-500 text-white" : "bg-primary text-primary-foreground hover:scale-[1.02] hover:shadow-primary/30"
                   }`}
                 >
@@ -224,7 +224,7 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
             <div className="contact-map overflow-hidden rounded-3xl shadow-xl border border-border/50 h-[300px] md:h-[400px]">
               <iframe
                 title="Reyansh Solar Services Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5560767862935!2d77.6167!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzA2LjciTiA3N8KwMzcnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1890.8537843393096!2d73.89593328241729!3d18.58721810773384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c6d69d3f62a1%3A0xa18456879ab54285!2sDhanori%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1773732075268!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: "grayscale(0.1) contrast(1.1)" }}

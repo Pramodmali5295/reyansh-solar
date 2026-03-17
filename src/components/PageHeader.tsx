@@ -28,7 +28,7 @@ const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
         <div
           className="header-content text-center"
         >
-          <h1 className="mb-4 sm:mb-6 font-bold text-primary-foreground font-display text-3xl sm:text-5xl md:text-6xl tracking-tight leading-tight drop-shadow-lg">
+          <h1 className="mb-4 sm:mb-6 font-bold text-primary-foreground font-display heading-section tracking-tight drop-shadow-lg leading-tight md:leading-[1.1]">
             {title}
           </h1>
           {subtitle && (

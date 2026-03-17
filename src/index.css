@@ -76,6 +76,26 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hardened Typography for Vercel Deployment */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.02em;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -83,12 +103,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: "Playfair Display", serif;
+    overflow-x: hidden;
   }
 
   /* Hide number input arrows */
@@ -104,7 +119,7 @@
 
 @layer utilities {
   .section-padding {
-    @apply px-4 py-16 md:px-8 md:py-20 lg:px-12 xl:px-16;
+    @apply px-4 py-16 md:px-8 md:py-20 lg:px-12 xl:px-20;
   }
 
   .gradient-primary {
@@ -119,22 +134,17 @@
     text-shadow: 0 0 40px hsl(var(--glow-green) / 0.3);
   }
 
-  /* Responsive Typography Utilities - Reverted to fixed breakpoints for predictability */
+  /* Fixed Responsive Typography to prevent deployment drift */
   .heading-hero {
-    @apply text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl leading-tight;
+    @apply text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] xl:text-[84px] leading-[1.1];
   }
 
   .heading-section {
-    @apply text-3xl md:text-5xl lg:text-6xl leading-tight;
+    @apply text-[28px] sm:text-[40px] md:text-[52px] lg:text-[60px] leading-[1.2];
   }
 
   /* Performance Optimizations */
   .will-change-transform {
     will-change: transform;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
 }

@@ -43,8 +43,8 @@ const Navbar = () => {
     >
       <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16 container mx-auto">
         <Link to="/" className="group flex items-center gap-3 sm:gap-4 shrink-0">
-          <div className="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110 border border-slate-100">
-            <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1" />
+          <div className="flex h-14 w-24 sm:h-20 sm:w-32 items-center justify-center rounded-xl overflow-hidden transition-transform group-hover:scale-110">
+            <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain" />
           </div>
           <span className={`font-display text-lg sm:text-2xl lg:text-3xl font-black tracking-tighter transition-colors ${scrolled ? "text-foreground" : "text-white"}`}>
             Reyansh Solar Services
@@ -92,37 +92,49 @@ const Navbar = () => {
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0, y: -20 }}
-            animate={{ opacity: 1, height: "auto", y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -20 }}
-            className="overflow-hidden bg-card/98 backdrop-blur-xl shadow-2xl lg:hidden border-b border-border"
-          >
-            <ul className="flex flex-col gap-2 p-6">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+          <>
+            {/* Backdrop for mobile menu */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-[-1] bg-black/50 backdrop-blur-sm lg:hidden h-screen w-screen"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              className="absolute left-0 right-0 top-full mt-0 overflow-hidden bg-primary backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] lg:hidden border-t border-white/10"
+            >
+              <ul className="flex flex-col gap-1 p-6">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-xl px-5 py-4 text-[18px] font-bold transition-all active:scale-[0.98] ${
+                        isActive(link.href) 
+                          ? "bg-white/20 text-white" 
+                          : "text-white/90 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <li className="mt-4">
                   <Link
-                    to={link.href}
+                    to="/contact"
                     onClick={() => setIsOpen(false)}
-                    className={`block rounded-xl px-5 py-4 text-lg font-bold transition-all hover:bg-primary/10 active:scale-[0.98] ${
-                      isActive(link.href) ? "bg-primary/10 text-primary" : "text-foreground"
-                    }`}
+                    className="block rounded-full bg-accent px-5 py-4 text-center text-[18px] font-bold text-accent-foreground shadow-lg active:scale-95"
                   >
-                    {link.label}
+                    Contact Us
                   </Link>
                 </li>
-              ))}
-              <li className="mt-4">
-                <Link
-                  to="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="block rounded-full bg-accent px-5 py-4 text-center text-lg font-bold text-accent-foreground shadow-lg active:scale-95"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
+              </ul>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
