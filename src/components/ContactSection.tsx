@@ -104,13 +104,13 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                 { icon: Shield, label: "GST Number", value: "27ABMFR1823R1ZH" },
                 { icon: Clock, label: "Business Hours", value: "Mon - Sun: 9:00 AM - 6:00 PM" },
               ].map((item) => (
-                <div key={item.label} className="group flex flex-col sm:flex-row lg:flex-row gap-5 rounded-2xl bg-card p-6 shadow-sm transition-all hover:shadow-md border border-border/50">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <item.icon className="h-6 w-6" />
+                <div key={item.label} className="group flex flex-row gap-4 sm:gap-5 rounded-2xl bg-card p-4 sm:p-6 shadow-sm transition-all hover:shadow-md border border-border/50">
+                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <item.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <div className="text-base md:text-lg font-bold text-foreground">{item.label}</div>
-                    <div className="text-base text-muted-foreground mt-0.5">{item.value}</div>
+                  <div className="min-w-0">
+                    <div className="text-[15px] sm:text-lg font-bold text-foreground truncate">{item.label}</div>
+                    <div className="text-[14px] sm:text-base text-muted-foreground mt-0.5 leading-snug">{item.value}</div>
                   </div>
                 </div>
               ))}
@@ -132,9 +132,9 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
               </div>
 
               <div className="relative z-10">
-                <div className="mb-10">
-                   <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Request a Free Quote</h3>
-                   <p className="text-muted-foreground text-lg">Fill out the form below and we'll get back to you within 24 hours.</p>
+                <div className="mb-8">
+                   <h3 className="text-2xl xs:text-3xl md:text-4xl font-black text-foreground mb-3 tracking-tight">Request a Free Quote</h3>
+                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2 mb-5">

@@ -65,16 +65,16 @@ const SolarCalculatorSection = () => {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-6">Your Electricity Usage</h3>
+              <h3 className="text-xl sm:text-2xl font-black mb-6 tracking-tight">Your Electricity Usage</h3>
               
-              <div className="mb-6">
-                <label className="text-sm font-bold text-muted-foreground uppercase tracking-widest block mb-2">
-                  Property Type
+              <div className="mb-5 sm:mb-6">
+                <label className="text-[11px] sm:text-xs font-black text-muted-foreground uppercase tracking-[0.1em] block mb-2">
+                   Property Type
                 </label>
                 <select
                   value={propertyType}
                   onChange={(e) => handlePropertyTypeChange(e.target.value as "Residential" | "Commercial" | "Industrial")}
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm font-semibold outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 appearance-none"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3.5 sm:py-3 text-sm font-bold outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5 appearance-none"
                 >
                   <option value="Residential">Residential</option>
                   <option value="Commercial">Commercial</option>
@@ -82,9 +82,9 @@ const SolarCalculatorSection = () => {
                 </select>
               </div>
 
-              <div className="mb-6">
-                <label className="text-sm font-bold text-muted-foreground uppercase tracking-widest block mb-2">
-                  Electricity Rate (₹/unit)
+              <div className="mb-5 sm:mb-6">
+                <label className="text-[11px] sm:text-xs font-black text-muted-foreground uppercase tracking-[0.1em] block mb-2">
+                   Electricity Rate (₹/unit)
                 </label>
                 <input
                   type="number"
@@ -92,17 +92,17 @@ const SolarCalculatorSection = () => {
                   onChange={(e) => setUnitRate(e.target.value)}
                   min="1"
                   step="0.5"
-                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm font-semibold outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full rounded-xl border border-input bg-background/50 px-4 py-3.5 sm:py-3 text-sm font-bold outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
                 />
               </div>
 
-              <div className="mb-8">
-                <div className="flex justify-between items-end mb-4">
-                  <label className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
+              <div className="mb-8 sm:mb-10">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-4">
+                  <label className="text-[11px] sm:text-xs font-black text-muted-foreground uppercase tracking-[0.1em]">
                     Average Monthly Bill
                   </label>
-                  <div className="text-3xl font-black text-primary flex items-center">
-                    <IndianRupee className="h-6 w-6" />
+                  <div className="text-3xl sm:text-4xl font-black text-primary flex items-center leading-none">
+                    <IndianRupee className="h-6 w-6 sm:h-8 sm:w-8" />
                     {monthlyBill.toLocaleString("en-IN")}
                   </div>
                 </div>
@@ -116,29 +116,29 @@ const SolarCalculatorSection = () => {
                   onChange={(e) => setMonthlyBill(Number(e.target.value))}
                   className="w-full h-3 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary border border-primary/10"
                 />
-                <div className="flex justify-between mt-2 text-xs font-semibold text-muted-foreground">
+                <div className="flex justify-between mt-3 text-[10px] sm:text-xs font-black text-muted-foreground uppercase tracking-widest">
                   <span>₹0</span>
                   <span>₹20,000+</span>
                 </div>
               </div>
 
-              <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10 space-y-4">
+              <div className="bg-primary/5 rounded-2xl p-5 sm:p-6 border border-primary/10 space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-background flex items-center justify-center shadow-sm">
-                    <Zap className="h-6 w-6 text-accent" />
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-xl bg-background flex items-center justify-center shadow-sm">
+                    <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground font-bold uppercase tracking-wider">Estimated Consumption</div>
-                    <div className="text-xl font-bold text-foreground">{Math.round(monthlyUnits)} Units / month</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground font-black uppercase tracking-wider mb-0.5">Estimated Consumption</div>
+                    <div className="text-lg sm:text-xl font-black text-foreground">{Math.round(monthlyUnits)} Units / month</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-background flex items-center justify-center shadow-sm">
-                    <Sun className="h-6 w-6 text-primary" />
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-xl bg-background flex items-center justify-center shadow-sm">
+                    <Sun className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground font-bold uppercase tracking-wider">Recommended System Size</div>
-                    <div className="text-xl font-bold text-foreground">{recommendedKW} kW System</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground font-black uppercase tracking-wider mb-0.5">Recommended System</div>
+                    <div className="text-lg sm:text-xl font-black text-foreground">{recommendedKW} kW System</div>
                   </div>
                 </div>
               </div>

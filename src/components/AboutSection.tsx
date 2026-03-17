@@ -60,12 +60,12 @@ const AboutSection = () => {
     <div id="about" ref={containerRef}>
       {/* Narrative Section */}
       <section className="narrative-section section-padding overflow-hidden">
-        <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="w-full max-w-full px-4 sm:px-6 md:px-12 lg:px-20">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
             <div
-              className="about-image-wrapper relative"
+              className="about-image-wrapper relative px-2"
             >
-              <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl h-[300px] sm:h-[400px] lg:h-[450px]">
+              <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl h-[280px] xs:h-[350px] sm:h-[400px] lg:h-[450px]">
                 <img 
                   src={companyBuilding} 
                   alt="Reyansh Solar Services Headquarters" 
@@ -73,8 +73,8 @@ const AboutSection = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-3xl bg-primary/10" />
-              <div className="absolute -left-6 -top-6 -z-10 h-64 w-64 rounded-3xl bg-accent/10" />
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 -z-10 h-48 w-48 sm:h-64 sm:w-64 rounded-3xl bg-primary/10" />
+              <div className="absolute -left-2 -top-4 sm:-left-6 sm:-top-6 -z-10 h-48 w-48 sm:h-64 sm:w-64 rounded-3xl bg-accent/10" />
             </div>
 
             <div
@@ -89,7 +89,7 @@ const AboutSection = () => {
               <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
                   Founded with a singular vision to harness India's abundant sunlight, Reyansh Solar Services began as a small team 
-                  of passionate engineers in Bangalore. Today, we are one of the nation's most trusted solar EPC 
+                  of passionate engineers in Pune. Today, we are one of the nation's most trusted solar EPC 
                   (Engineering, Procurement, and Construction) companies.
                 </p>
                 <p>

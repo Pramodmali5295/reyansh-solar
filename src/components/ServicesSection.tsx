@@ -100,7 +100,7 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
             </div>
           )}
 
-          <div className="services-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="services-grid grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {services.map((s, i) => (
               <div
                 key={s.title}
@@ -146,7 +146,10 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
               We make the transition to solar energy seamless, transparent, and efficient.
             </p>
           </div>
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 relative">
+            {/* Vertical connector for mobile */}
+            <div className="absolute left-[50%] top-12 bottom-12 w-px border-l-2 border-dashed border-primary/10 sm:hidden -translate-x-1/2" />
+            
             {processSteps.map((step, i) => (
               <div
                 key={step.title}
@@ -155,11 +158,11 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                 {i < processSteps.length - 1 && (
                   <div className="absolute left-[60%] top-[40px] hidden w-full border-t-2 border-dashed border-primary/20 lg:block" />
                 )}
-                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-card shadow-xl ring-8 ring-primary/5 transition-transform hover:scale-110 duration-300">
+                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-card shadow-xl ring-8 ring-primary/5 transition-transform hover:scale-110 duration-300 relative z-10">
                   <step.icon className={`h-9 w-9 ${step.color}`} />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-foreground">{step.title}</h4>
-                <p className="text-sm text-muted-foreground">{step.desc}</p>
+                <p className="text-sm text-muted-foreground px-4 sm:px-0">{step.desc}</p>
               </div>
             ))}
           </div>
