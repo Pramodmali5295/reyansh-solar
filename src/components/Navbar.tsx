@@ -35,18 +35,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex items-center ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-3"
-          : "bg-transparent py-4 sm:py-6"
+          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 h-20 sm:h-24"
+          : "bg-transparent h-24 sm:h-32"
       }`}
     >
-      <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16">
-        <Link to="/" className="group flex items-center gap-2 sm:gap-4">
-          <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
+      <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16 container mx-auto">
+        <Link to="/" className="group flex items-center gap-3 sm:gap-4 shrink-0">
+          <div className="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110 border border-slate-100">
             <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1" />
           </div>
-          <span className={`font-display flex-shrink-0 text-base sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+          <span className={`font-display text-lg sm:text-2xl lg:text-3xl font-black tracking-tighter transition-colors ${scrolled ? "text-foreground" : "text-white"}`}>
             Reyansh Solar Services
           </span>
         </Link>

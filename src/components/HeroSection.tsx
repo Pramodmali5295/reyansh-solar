@@ -55,7 +55,7 @@ const HeroSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section id="home" className="relative min-h-[110vh] sm:min-h-screen flex flex-col pt-24 sm:pt-32 pb-20 overflow-hidden" ref={containerRef}>
+    <section id="home" className="relative min-h-[110vh] sm:min-h-screen flex flex-col pt-32 sm:pt-48 pb-20 overflow-hidden" ref={containerRef}>
       {/* Background Image */}
       <div className="absolute inset-0 bg-image-container">
         <img
