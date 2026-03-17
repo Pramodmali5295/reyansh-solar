@@ -58,7 +58,7 @@ const Footer = () => {
   }, { scope: containerRef });
 
   return (
-    <footer className="relative bg-[#020617] pt-12 pb-6 overflow-hidden text-white" ref={containerRef}>
+    <footer className="relative bg-[#020617] pt-8 pb-4 overflow-hidden text-white" ref={containerRef}>
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="footer-bg-blob absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
@@ -67,10 +67,10 @@ const Footer = () => {
 
       <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-8 border-b border-white/10 pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-6 border-b border-white/10 pb-8">
           
           {/* Column 1: Brand & Mission */}
-          <div className="footer-column md:col-span-2 lg:col-span-4 space-y-6">
+          <div className="footer-column sm:col-span-2 lg:col-span-4 space-y-4">
             <Link to="/" className="group flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl overflow-hidden bg-white shadow-2xl transition-all group-hover:scale-110 group-hover:rotate-3">
                 <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1.5" />
@@ -101,7 +101,7 @@ const Footer = () => {
 
           {/* Column 2: Navigation */}
           <div className="footer-column md:col-span-1 lg:col-span-2">
-            <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-6 flex items-center gap-3">
+            <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-4 flex items-center gap-3">
                <span className="w-8 h-px bg-green-400/50 block md:hidden" /> Company
             </h4>
             <ul className="space-y-3">
@@ -128,7 +128,7 @@ const Footer = () => {
 
           {/* Column 3: Services */}
           <div className="footer-column md:col-span-1 lg:col-span-3">
-            <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-6 flex items-center gap-3">
+            <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-4 flex items-center gap-3">
                <span className="w-8 h-px bg-green-400/50 block md:hidden" /> Solutions
             </h4>
             <ul className="space-y-3">
@@ -150,7 +150,7 @@ const Footer = () => {
           {/* Column 4: Contact & Trust */}
           <div className="footer-column md:col-span-2 lg:col-span-3 space-y-6 pt-4 md:pt-0">
             <div>
-              <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-6 flex items-center gap-3">
+              <h4 className="text-lg lg:text-xl font-black uppercase tracking-widest text-green-400 mb-4 flex items-center gap-3">
                  <span className="w-8 h-px bg-green-400/50 block md:hidden" /> Reach Out
               </h4>
               <ul className="space-y-3">
@@ -178,7 +178,7 @@ const Footer = () => {
             </div>
             
             {/* Certifications row */}
-            <div className="flex gap-6 pt-4 border-t border-white/5">
+            <div className="flex gap-6 pt-3 border-t border-white/5">
                 <div className="flex items-center gap-2 text-white transition-all">
                    <Shield className="h-5 w-5" />
                    <span className="text-xs font-bold uppercase tracking-tight">ISO Certified</span>
@@ -192,21 +192,24 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-8 pt-4">
-          <div className="flex items-center justify-center w-full md:w-auto text-sm md:text-base font-bold text-white/70">
-            <span className="text-center">© {currentYear} REYANSH SOLAR SERVICES. All Rights Reserved.</span>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-white/5">
+          <div className="text-xs md:text-sm font-bold text-white/70 text-center md:text-left">
+            © {currentYear} REYANSH SOLAR SERVICES. All Rights Reserved.
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <button 
               onClick={scrollToTop}
-              className="group flex items-center gap-4 text-base font-black uppercase tracking-[0.2em] text-white transition-all"
+              className="group flex items-center gap-3 text-sm font-black uppercase tracking-[0.2em] text-white transition-all order-2 md:order-1"
             >
               Back to Top
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_hsla(var(--primary),0.4)] transition-all">
-                <ArrowUp className="h-5 w-5 text-white" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_20px_hsla(var(--primary),0.4)] transition-all">
+                <ArrowUp className="h-4 w-4 text-white" />
               </div>
             </button>
+            <div className="text-xs md:text-sm font-bold text-white/70 order-1 md:order-2">
+              Developed by <a href="https://infoyashonand.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white transition-colors underline underline-offset-4 decoration-white/30">Infoyashonand Technology Pvt Ltd</a>
+            </div>
           </div>
         </div>
       </div>

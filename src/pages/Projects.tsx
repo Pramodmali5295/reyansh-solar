@@ -12,7 +12,7 @@ const Projects = () => {
           title="Project Portfolio" 
           subtitle="Explore our successful solar installations across India, ranging from smart-city residential complexes to high-capacity industrial projects."
         />
-        <ProjectsSection showHeader={false} />
+        <ProjectsSection showHeader={false} isSlider={false} />
       </main>
       <Footer />
     </div>

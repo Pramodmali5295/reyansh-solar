@@ -55,7 +55,7 @@ const SocialBar = () => {
           href={social.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`social-icon-wrapper group relative flex h-16 w-14 items-center justify-center rounded-l-2xl ${social.bgColor} shadow-2xl border border-white/20 transition-all duration-500 hover:w-24 hover:-translate-x-8`}
+          className={`social-icon-wrapper group relative flex h-16 w-14 items-center justify-center rounded-l-2xl ${social.bgColor} shadow-2xl border border-white/20 transition-all duration-500 hover:w-24 hover:-translate-x-8 will-change-transform`}
           aria-label={social.label}
           style={{ perspective: "1000px" }}
         >

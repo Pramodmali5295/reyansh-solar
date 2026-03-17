@@ -19,7 +19,7 @@ const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
   }, { scope: containerRef });
 
   return (
-    <div className="relative pt-40 pb-20 sm:pt-56 sm:pb-32 min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center overflow-hidden" ref={containerRef}>
+    <div className="relative pt-32 pb-16 sm:pt-48 sm:pb-28 lg:pt-56 lg:pb-32 min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center overflow-hidden" ref={containerRef}>
       <div className="absolute inset-0 z-0">
         <img src={heroSolar2} alt="Header Background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
@@ -28,11 +28,11 @@ const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
         <div
           className="header-content text-center"
         >
-          <h1 className="mb-6 font-bold text-primary-foreground font-display text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight drop-shadow-lg">
+          <h1 className="mb-4 sm:mb-6 font-bold text-primary-foreground font-display text-3xl sm:text-5xl md:text-6xl tracking-tight leading-tight drop-shadow-lg">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               {subtitle}
             </p>
           )}

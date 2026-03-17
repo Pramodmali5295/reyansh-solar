@@ -79,11 +79,11 @@ const TestimonialsSection = ({ showHeader = true }: { showHeader?: boolean }) =>
   }, { scope: containerRef, dependencies: [showHeader] });
 
   return (
-    <section id="testimonials" className="testimonials-section section-padding bg-background" ref={containerRef}>
-      <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
+    <section id="testimonials" className="testimonials-section py-16 md:py-20 bg-background" ref={containerRef}>
+      <div className="w-full max-w-full">
         {showHeader && (
           <div
-            className="testimonials-header mx-auto mb-20 max-w-3xl text-center"
+            className="testimonials-header mx-auto mb-20 max-w-3xl text-center px-6 md:px-12 lg:px-20"
           >
             <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
               Client Feedback
@@ -99,11 +99,11 @@ const TestimonialsSection = ({ showHeader = true }: { showHeader?: boolean }) =>
         )}
 
         <div className="relative flex overflow-hidden w-full py-6 group">
-          <div className="flex w-max animate-marquee gap-6 md:gap-8 group-hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-marquee gap-6 md:gap-8 group-hover:[animation-play-state:paused] will-change-transform">
             {[...testimonials, ...testimonials].map((t, i) => (
               <div
                 key={i}
-                className="testimonial-card relative flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-8 md:p-10 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl hover:border-primary/20 w-[300px] md:w-[450px] shrink-0"
+                className="testimonial-card relative flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-8 md:p-10 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl hover:border-primary/20 w-[300px] md:w-[450px] shrink-0 will-change-transform"
               >
                 <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg transition-transform hover:rotate-12">
                   <Quote className="h-4 w-4 md:h-5 md:w-5" />

@@ -16,9 +16,8 @@ const values = [
 ];
 
 const stats = [
-  { icon: Sun, value: 15, suffix: "MW+", label: "Clean Power Generated" },
-  { icon: Users, value: 2500, suffix: "+", label: "Happy Customers" },
-  { icon: Award, value: 12, suffix: "+", label: "Industry Awards" },
+  { icon: Sun, value: 60, suffix: " kW+", label: "Work Done" },
+  { icon: Users, value: 20, suffix: "+", label: "Happy Customers" },
   { icon: ShieldCheck, value: 100, suffix: "%", label: "Safe Installation" },
 ];
 
@@ -85,7 +84,7 @@ const AboutSection = () => {
                 Our Journey
               </span>
               <h2 className="mb-6 font-bold text-foreground heading-section">
-                Leading the Solar Revolution Since 2010
+                Leading the Solar Revolution Since 2025
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
@@ -94,7 +93,7 @@ const AboutSection = () => {
                   (Engineering, Procurement, and Construction) companies.
                 </p>
                 <p>
-                  Over the past decade, we have perfected the art of solar integration, delivering over 500+ high-performance 
+                  Since our inception, we have perfected the art of solar integration, delivering over 20+ high-performance 
                   projects. Our journey is defined by innovation, engineering excellence, and a relentless commitment to 
                   customer satisfaction.
                 </p>
@@ -116,7 +115,7 @@ const AboutSection = () => {
       {/* Stats Section */}
       <section className="stats-section bg-primary py-20 text-primary-foreground">
         <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
             {stats.map((s, i) => (
               <div
                 key={s.label}

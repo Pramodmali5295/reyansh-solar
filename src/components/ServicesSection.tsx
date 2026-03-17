@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Home, Building2, Factory, Wrench, ArrowRight, ClipboardCheck, Ruler, Truck, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 import residentialImg from "@/assets/residential-solar.png";
@@ -42,10 +43,10 @@ const services = [
 ];
 
 const processSteps = [
-  { icon: ClipboardCheck, title: "Consultation", desc: "Expert assessment of your load and site requirements." },
-  { icon: Ruler, title: "Design", desc: "Custom 3D layout and shadow analysis for max yield." },
-  { icon: Truck, title: "Installation", desc: "Rapid 48-hour deployment by certified technicians." },
-  { icon: ShieldCheck, title: "Monitoring", desc: "24/7 AI-driven performance tracking via mobile app." },
+  { icon: ClipboardCheck, title: "Consultation", desc: "Expert assessment of your load and site requirements.", color: "text-blue-500" },
+  { icon: Ruler, title: "Design", desc: "Custom 3D layout and shadow analysis for max yield.", color: "text-amber-500" },
+  { icon: Truck, title: "Installation", desc: "Rapid 48-hour deployment by certified technicians.", color: "text-emerald-500" },
+  { icon: ShieldCheck, title: "Monitoring", desc: "24/7 AI-driven performance tracking via mobile app.", color: "text-purple-500" },
 ];
 
 const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
@@ -82,7 +83,7 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
   return (
     <div id="services" ref={containerRef}>
       {/* Services Grid */}
-      <section className="services-section section-padding">
+      <section className="services-section py-16 md:py-20 lg:py-24">
         <div className="w-full max-w-full px-6 md:px-12 lg:px-20">
           {showHeader && (
             <div className="services-header mx-auto mb-20 max-w-3xl text-center">
@@ -103,10 +104,10 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="service-card group relative overflow-hidden rounded-3xl border border-border bg-card transition-all hover:shadow-2xl"
+                className="service-card group relative overflow-hidden rounded-3xl border border-border bg-card transition-all hover:shadow-2xl will-change-transform"
               >
                 <div className="aspect-video w-full overflow-hidden">
-                  <img src={s.image} alt={s.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <img src={s.image} alt={s.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-8">
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -122,12 +123,13 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
+                    onClick={() => window.scrollTo(0, 0)}
                     className="inline-flex items-center gap-2 font-bold text-primary transition-all hover:gap-3"
                   >
                     Custom Quote <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -153,8 +155,8 @@ const ServicesSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                 {i < processSteps.length - 1 && (
                   <div className="absolute left-[60%] top-[40px] hidden w-full border-t-2 border-dashed border-primary/20 lg:block" />
                 )}
-                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-card shadow-xl ring-8 ring-primary/5">
-                  <step.icon className="h-9 w-9 text-primary" />
+                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-card shadow-xl ring-8 ring-primary/5 transition-transform hover:scale-110 duration-300">
+                  <step.icon className={`h-9 w-9 ${step.color}`} />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-foreground">{step.title}</h4>
                 <p className="text-sm text-muted-foreground">{step.desc}</p>

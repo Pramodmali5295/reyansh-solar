@@ -127,6 +127,11 @@
   .heading-section {
     @apply text-3xl md:text-5xl lg:text-6xl leading-tight;
   }
+
+  /* Performance Optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
 }
 
 html {

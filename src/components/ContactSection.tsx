@@ -154,7 +154,14 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
                       type="tel"
                       name="phone"
                       required
-                      placeholder="+91 00000 00000"
+                      pattern="[0-9]{10}"
+                      title="Please enter a 10-digit phone number"
+                      maxLength={10}
+                      minLength={10}
+                      onInput={(e) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+                      }}
+                      placeholder="e.g. 9876543210"
                       className="w-full rounded-xl border border-input bg-background/50 px-5 py-4 text-base outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/5"
                     />
                   </div>

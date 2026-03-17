@@ -42,11 +42,11 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16">
-        <Link to="/" className="group flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-4">
+          <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
             <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1" />
           </div>
-          <span className={`font-display flex-shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+          <span className={`font-display flex-shrink-0 text-base sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             Reyansh Solar Services
           </span>
         </Link>
