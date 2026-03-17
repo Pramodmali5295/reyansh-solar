@@ -88,7 +88,8 @@ const HeroSection = () => {
                 Premium solar solutions for homes and businesses. Expert design, professional installation, and lifelong support.
               </p>
               <div className="text-sm sm:text-base md:text-lg text-primary-foreground/90 leading-relaxed bg-white/5 backdrop-blur-md py-4 px-5 sm:px-8 rounded-2xl border border-white/10 mx-2 sm:mx-0">
-                <span className="text-accent font-black">Government-approved</span> solar solutions with up to <span className="text-accent font-black">₹78,000 subsidy</span>. We handle everything from site survey to DISCOM approval.
+                <span className="text-accent font-black">Government-approved</span> solar solutions with up to <span className="text-accent font-black">₹78,000 subsidy</span> for residential households and <span className="text-accent font-black">₹18,000 per/kwatt subsidy</span> for Group Housing society.
+                <br className="hidden sm:block" /> We handle everything from site survey to DISCOM approval.
               </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto px-6 sm:px-0">

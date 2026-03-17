@@ -16,14 +16,15 @@ import commercialSolar from "@/assets/commercial-solar.png";
 import project1 from "@/assets/project1.jpeg";
 import projectVideo from "@/assets/video 1.mp4";
 import inverterImg from "@/assets/inverter-installation.jpg";
-import residentialSolarNew from "@/assets/residential-solar-new.png";
+import residentialImg from "@/assets/residential.png";
+import projectImage2 from "@/assets/project image 2.jpeg";
 
 const projects = [
-  { image: residentialSolarNew, title: "Residential Solar Power", location: "Dehu, Pune", capacity: "3 kW", type: "Residential" },
+  { image: residentialImg, title: "Residential Solar Power", location: "Dehu, Pune", capacity: "3 kW", type: "Residential" },
   { image: inverterImg, title: "Rooftop Solar Installation", location: "Dehu, Pune", capacity: "3 kW", type: "Residential" },
   { image: project1, title: "Premium Home Solar", location: "Dhanori, Pune", capacity: "3 kW", type: "Residential" },
   { image: projectVilla, video: projectVideo, title: "Eco-Friendly Residence", location: "Dhanori, Pune", capacity: "6 kW", type: "Residential" },
-  { image: projectOffice, title: "Advanced Solar Solution", location: "Vadgaon Sheri, Pune", capacity: "9 kW", type: "Residential" },
+  { image: projectImage2, title: "Advanced Solar Solution", location: "Vadgaon Sheri, Pune", capacity: "9 kW", type: "Residential" },
 ];
 
 
