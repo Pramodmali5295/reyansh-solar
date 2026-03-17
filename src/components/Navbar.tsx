@@ -52,12 +52,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden items-center gap-6 xl:gap-12 lg:flex">
+        <ul className="hidden items-center gap-6 xl:gap-8 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={`text-lg font-bold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
+                className={`text-[16px] font-bold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
                   isActive(link.href) ? "text-accent after:w-full" : (scrolled ? "text-foreground" : "text-white drop-shadow-md brightness-110")
                 }`}
               >
@@ -68,7 +68,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="rounded-full bg-accent px-8 py-3.5 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
+              className="rounded-full bg-accent px-6 py-3 text-[16px] font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
             >
               Contact Us
             </Link>

@@ -58,11 +58,11 @@ const TrustBar = () => {
       <div className="relative">
         <div 
           ref={scrollRef}
-          className="flex items-center gap-16 md:gap-32 whitespace-nowrap will-change-transform"
+          className="flex items-center gap-8 md:gap-12 whitespace-nowrap will-change-transform"
         >
           {displayPartners.map((p, i) => (
-            <div key={`${p.name}-${i}`} className="partner-logo flex items-center justify-center min-w-[140px] sm:min-w-[200px] md:min-w-[350px] px-4 sm:px-8">
-              <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-slate-50 flex items-center justify-center w-full h-24 sm:h-32 md:h-48">
+            <div key={`${p.name}-${i}`} className="partner-logo flex items-center justify-center min-w-[120px] sm:min-w-[180px] md:min-w-[280px] px-2 sm:px-4">
+              <div className="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 shadow-sm border border-slate-50 flex items-center justify-center w-full h-20 sm:h-28 md:h-40">
                 <img 
                   src={p.logo} 
                   alt={p.name} 
