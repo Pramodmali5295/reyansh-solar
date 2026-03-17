@@ -37,8 +37,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-8"
-          : "bg-transparent py-14"
+          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-3"
+          : "bg-transparent py-4 sm:py-6"
       }`}
     >
       <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16">
