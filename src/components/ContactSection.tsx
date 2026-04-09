@@ -100,17 +100,27 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
               {[
                 { icon: MapPin, label: "Headquarters", value: "Gat no. 404, Yelwadi, Near Dehu, Khed, Pune - 410501" },
                 { icon: Phone, label: "Phone Support", value: "+91 96570 68609" },
-                { icon: Mail, label: "Email Us", value: "reyanshsolarsevices@gmail.com" },
+                { icon: Mail, label: "Email Us", value: "reyanshsolarservices@gmail.com" },
                 { icon: Shield, label: "GST Number", value: "27ABMFR1823R1ZH" },
                 { icon: Clock, label: "Business Hours", value: "Mon - Sun: 9:00 AM - 6:00 PM" },
               ].map((item) => (
-                <div key={item.label} className="group flex flex-row gap-4 sm:gap-5 rounded-2xl bg-card p-4 sm:p-6 shadow-sm transition-all hover:shadow-md border border-border/50">
-                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <item.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                <div key={item.label} className="group flex flex-row gap-3 sm:gap-5 rounded-2xl bg-card p-3 sm:p-6 shadow-sm transition-all hover:shadow-md border border-border/50">
+                  <div className="flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <item.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                   </div>
-                  <div className="min-w-0">
-                    <div className="text-[15px] sm:text-lg font-bold text-foreground truncate">{item.label}</div>
-                    <div className="text-[14px] sm:text-base text-muted-foreground mt-0.5 leading-snug">{item.value}</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[14px] sm:text-lg font-bold text-foreground truncate">{item.label}</div>
+                    {item.label === "Email Us" ? (
+                      <a href={`mailto:${item.value}`} className="text-[11px] xs:text-[13px] sm:text-base text-muted-foreground mt-0.5 leading-snug whitespace-nowrap hover:text-primary transition-colors block">
+                        {item.value}
+                      </a>
+                    ) : item.label === "Phone Support" ? (
+                      <a href={`tel:${item.value.replace(/\s+/g, '')}`} className="text-[14px] sm:text-base text-muted-foreground mt-0.5 leading-snug whitespace-nowrap hover:text-primary transition-colors block">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="text-[14px] sm:text-base text-muted-foreground mt-0.5 leading-snug break-words">{item.value}</div>
+                    )}
                   </div>
                 </div>
               ))}

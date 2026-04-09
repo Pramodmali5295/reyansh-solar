@@ -161,17 +161,21 @@ const Footer = () => {
                     Gat no. 404, Yelwadi, Near Dehu, Khed, Pune - 410501
                   </span>
                 </li>
-                <li className="flex items-center gap-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-all">
-                    <Phone className="h-5 w-5 text-white" />
+                <li className="flex items-center gap-3 sm:gap-4 group">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-all">
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
-                  <span className="text-base md:text-lg text-white/90 group-hover:text-white font-bold transition-colors">+91 96570 68609</span>
+                  <a href="tel:+919657068609" className="text-sm sm:text-base md:text-lg text-white/90 group-hover:text-white font-bold transition-colors whitespace-nowrap">
+                    +91 96570 68609
+                  </a>
                 </li>
-                <li className="flex items-center gap-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-all">
-                    <Mail className="h-5 w-5 text-white" />
+                <li className="flex items-center gap-3 sm:gap-4 group">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-all">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
-                  <span className="text-base md:text-lg text-white/90 group-hover:text-white font-bold transition-colors break-all">reyanshsolarsevices@gmail.com</span>
+                  <a href="mailto:reyanshsolarservices@gmail.com" className="text-[13px] sm:text-sm md:text-lg text-white/90 group-hover:text-white font-bold transition-colors whitespace-nowrap">
+                    reyanshsolarservices@gmail.com
+                  </a>
                 </li>
               </ul>
             </div>
