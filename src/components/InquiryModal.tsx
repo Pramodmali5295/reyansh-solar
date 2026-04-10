@@ -48,8 +48,8 @@ export function InquiryModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-4xl p-0 overflow-hidden border-0 bg-transparent shadow-none sm:rounded-3xl">
-        <div className="flex flex-col md:flex-row w-full bg-card rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+      <DialogContent className="max-w-4xl p-0 overflow-hidden border-0 bg-transparent shadow-none sm:rounded-3xl max-h-[96vh] overflow-y-auto">
+        <div className="flex flex-col md:flex-row w-full bg-card rounded-3xl overflow-hidden shadow-2xl border border-border/50 my-auto">
           
           {/* Left Panel - Value Proposition */}
           <div className="hidden md:flex flex-col justify-between w-[40%] bg-primary p-10 text-primary-foreground relative overflow-hidden">
@@ -101,13 +101,13 @@ export function InquiryModal() {
           </div>
 
           {/* Right Panel - Form */}
-          <div className="w-full md:w-[60%] p-6 md:p-10 relative bg-card">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Get Your Free Estimate</h3>
-              <p className="text-muted-foreground text-sm">Takes less than a minute. No obligations.</p>
+          <div className="w-full md:w-[60%] p-4 sm:p-6 md:p-10 relative bg-card">
+            <div className="mb-3 md:mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1 md:mb-2 text-center md:text-left">Get Your Free Estimate</h3>
+              <p className="text-muted-foreground text-[11px] sm:text-sm text-center md:text-left">Takes less than a minute. No obligations.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider ml-1">Full Name</label>
@@ -116,7 +116,7 @@ export function InquiryModal() {
                     name="name"
                     required
                     placeholder="Rahul Sharma"
-                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-2 sm:py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -133,7 +133,7 @@ export function InquiryModal() {
                       e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
                     }}
                     placeholder="e.g. 9876543210"
-                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-xl border border-input bg-background/50 px-4 py-2 sm:py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
               </div>
@@ -141,7 +141,7 @@ export function InquiryModal() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider ml-1">Monthly Light Units</label>
-                  <select name="units" className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
+                  <select name="units" className="w-full rounded-xl border border-input bg-background/50 px-4 py-2 sm:py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
                     <option>0 - 150 Units</option>
                     <option>151 - 300 Units</option>
                     <option>301 - 500 Units</option>
@@ -151,7 +151,7 @@ export function InquiryModal() {
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider ml-1">Property Type</label>
-                  <select name="type" className="w-full rounded-xl border border-input bg-background/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
+                  <select name="type" className="w-full rounded-xl border border-input bg-background/50 px-4 py-2 sm:py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
                     <option>Residential</option>
                     <option>Commercial</option>
                     <option>Industrial</option>
@@ -165,7 +165,7 @@ export function InquiryModal() {
                   rows={2}
                   name="details"
                   placeholder="Any specific requirements or questions?"
-                  className="w-full resize-none rounded-xl border border-input bg-background/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full h-16 sm:h-auto resize-none rounded-xl border border-input bg-background/50 px-4 py-2 sm:py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
               </div>
 
@@ -173,7 +173,7 @@ export function InquiryModal() {
                 <button
                   type="submit"
                   disabled={submitted}
-                  className={`relative flex w-full items-center justify-center gap-2 rounded-xl py-4 text-base font-bold shadow-lg transition-all active:scale-[0.98] overflow-hidden ${
+                  className={`relative flex w-full items-center justify-center gap-2 rounded-xl py-3 sm:py-4 text-base font-bold shadow-lg transition-all active:scale-[0.98] overflow-hidden ${
                     submitted ? "bg-green-500 text-white" : "bg-primary text-primary-foreground hover:shadow-primary/25"
                   }`}
                 >
@@ -190,7 +190,7 @@ export function InquiryModal() {
                     </>
                   )}
                 </button>
-                <p className="mt-4 text-center text-[11px] text-muted-foreground font-medium">
+                <p className="mt-2 md:mt-4 text-center text-[10px] sm:text-[11px] text-muted-foreground font-medium">
                   Your information is 100% secure. We respect your privacy.
                 </p>
               </div>

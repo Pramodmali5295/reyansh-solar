@@ -100,7 +100,7 @@ const ContactSection = ({ showHeader = true }: { showHeader?: boolean }) => {
               {[
                 { icon: MapPin, label: "Headquarters", value: "Gat no. 404, Yelwadi, Near Dehu, Khed, Pune - 410501" },
                 { icon: Phone, label: "Phone Support", value: "+91 96570 68609" },
-                { icon: Mail, label: "Email Us", value: "reyanshsolarservices@gmail.com" },
+                { icon: Mail, label: "Email Us", value: "info@reyanshsolarservices.com" },
                 { icon: Shield, label: "GST Number", value: "27ABMFR1823R1ZH" },
                 { icon: Clock, label: "Business Hours", value: "Mon - Sun: 9:00 AM - 6:00 PM" },
               ].map((item) => (

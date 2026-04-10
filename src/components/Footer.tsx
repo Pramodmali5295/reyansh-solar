@@ -173,8 +173,8 @@ const Footer = () => {
                   <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-all">
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
-                  <a href="mailto:reyanshsolarservices@gmail.com" className="text-[13px] sm:text-sm md:text-lg text-white/90 group-hover:text-white font-bold transition-colors whitespace-nowrap">
-                    reyanshsolarservices@gmail.com
+                  <a href="mailto:info@reyanshsolarservices.com" className="text-[13px] sm:text-sm md:text-lg text-white/90 group-hover:text-white font-bold transition-colors whitespace-nowrap">
+                    info@reyanshsolarservices.com
                   </a>
                 </li>
               </ul>
